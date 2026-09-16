@@ -41,3 +41,13 @@ npm run preview
 ```
 
 There are no test projects/scripts in the repo yet.
+
+## Skills setup
+
+`.agents/skills` is the source of truth for agent skills; `.claude/skills` is a generated mirror (git-ignored, since Windows can't reliably symlink it). After cloning, run once:
+
+```
+git config core.hooksPath .githooks
+```
+
+This enables `.githooks/post-checkout`, `.githooks/post-merge`, and `.githooks/post-commit`, which call `scripts/sync-skills.sh` to keep `.claude/skills` in sync with `.agents/skills`. You can also run `scripts/sync-skills.sh` manually at any time.

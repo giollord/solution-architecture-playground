@@ -430,3 +430,6 @@ FodyWeavers.xsd
 
 # Official VS Code C# Dev Kit Extension exclusion
 #*.lscache
+
+# Generated mirror of .agents/skills (see .githooks/ and scripts/sync-skills.sh)
+.claude/skills/
